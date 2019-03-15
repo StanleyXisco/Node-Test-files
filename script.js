@@ -24,6 +24,7 @@ stanley = () =>{
 
 chidera = () => {
 	fs.readFile('./santa.txt', (error, data) =>  {
+		console.time('start Time: ');
 		const directions = data.toString();
 		const directionsArrays = directions.split('');
 		let acc = 0;
@@ -37,6 +38,7 @@ chidera = () => {
 			counter ++ ;
 			return acc < 0;
 		})
+		console.timeEnd('start Time: ');
 		console.log('Santa entered the basement at floor', counter);
 	})
 }
